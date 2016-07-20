@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="l-app">
+            <!-- Binded with the Vue Instance -->
+
+              <!-- Instruction -->
+              <ul>Features
+                  <li>Fill inputs, then press enter or add button to register an item</li>
+                  <li>All inputs are displayed</li>
+                  <li>Double click for editing</li>
+                  <li>Click on the cross to delete</li>
+              </ul>
+
+              
+              <!-- Create -->
+              <input v-model="newItem.input1"> <!-- v-model data binding  -->
+              <input v-model="newItem.input2" @keyup.enter="add">
+              <input type="submit" @click="add" value="add"> <!-- event registration @ shortcut for v-on:  -->
+              <input type="submit" @click="clearAll" value="Clear All">
+
+              <ul>
+                <!-- List rendering with v-for -->
+                <li v-for="item in items" :class="{completed: item.completed, editing: item == editedItem}">
+                    <!-- Display -->
+                    <span @dblclick="edit(item)">{{ item.input1 }}-{{ item.input2 }}</span>
+                    <!-- Edit -->
+                    <input class="edit" type="text"
+                    v-model="item.input1"
+                    @blur="doneEdit(item)"
+                    @keyup.enter="doneEdit(item)">
+
+                    <input class="edit" type="text"
+                    v-model="item.input2"
+                    @blur="doneEdit(item)"
+                    @keyup.enter="doneEdit(item)">
+                    <!-- Delete -->
+                    <button @click="remove(item)">X</button>
+                </li>
+              </ul>
+        </div>
+
+        <script src="../_lib/vue.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
