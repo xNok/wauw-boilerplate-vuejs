@@ -2,14 +2,16 @@
 * @Author: Alexandre-COUEDELO
 * @Date:   2016-07-18 23:50:40
 * @Last Modified by:   Alexandre-COUEDELO
-* @Last Modified time: 2016-07-19 00:35:47
+* @Last Modified time: 2016-07-21 10:08:35
 */
 
 'use strict';
 
 var vm = new Vue({
   el: '#l-app', //binding to the DOM
-  /* Variables */
+    /*************/
+   /* Variables */
+  /*************/
   data: {
     // variables definition
     // #[reminder]
@@ -21,7 +23,9 @@ var vm = new Vue({
     // #[reminder]
     // same usage as data, but variables are javascript function 
   },
-  /* Function */
+    /*************/
+   /* Variables */
+  /*************/
   methods: {
     // methods library
     // #[reminder]
@@ -30,18 +34,28 @@ var vm = new Vue({
   mixins: [
     //external function bundle. They are merge with the vue instance
   ],
-  /* Events */
+    /*************/
+   /* Events    */
+  /*************/
+  watch: {
+    // attach callback to expressions of the Vue instance
+    // such as data and computed
+    // #[reminder]
+    // use those watch attributes to interact after that a value changes
+    // #[trick]
+    // very use fall to pull other framworks (jQuery, motionUI, etc.)
+  },
   created: function() {
-    // instance ready callback
+    // instance created callback after-> observe data, init Events
   },
   beforeCcompiled: function() {
-    // instance ready callback
+    // instance ready callback   after-> mount el
   },
   compiled: function() {
-    // instance ready callback
+    // instance ready callback   after-> compile el and templates
   },
   ready: function() {
-    // instance ready callback
+    // instance ready callback   after-> insert into document for the first time
   },
   destroyed: function() {
     // instance ready callback
