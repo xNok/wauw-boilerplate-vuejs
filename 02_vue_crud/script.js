@@ -2,7 +2,7 @@
 * @Author: Alexandre-COUEDELO
 * @Date:   2016-07-18 23:50:40
 * @Last Modified by:   Alexandre-COUEDELO
-* @Last Modified time: 2016-07-20 12:19:59
+* @Last Modified time: 2016-07-26 17:03:07
 */
 
 'use strict';
@@ -20,7 +20,9 @@ function clone(obj){
 
 var vm = new Vue({
   el: '#l-app', //binding to the DOM
-  /* Variables */
+/*************\
+|* Variables *|
+\*************/
   data: {
     // variables definition
     newItem: clone(emptyItem),
@@ -32,7 +34,9 @@ var vm = new Vue({
     // #[reminder]
     // same usage as data, but variables are javascript function 
   },
-  /* Function */
+/*************\
+|* Functions *|
+\*************/
   methods: {
     // methods library
     add: function () {
@@ -49,14 +53,12 @@ var vm = new Vue({
     },
     remove: function (item) {
       this.items.$remove(item);
-
         /*********************/
        /* TODO - API/delete */
       /*********************/
     },
     clearAll: function() {
       this.items = [];
-
         /************************/
        /* TODO - API/deleteAll */
       /************************/
@@ -65,7 +67,6 @@ var vm = new Vue({
     doneEdit: function(item){
       /* save edited */
       this.editedItem = null;
-
         /*******************/
        /* TODO - API/edit */
       /*******************/
@@ -74,7 +75,9 @@ var vm = new Vue({
   mixins: [
     //external function bundle. They are merge with the vue instance
   ],
-  /* Events */
+/*************\
+|*   Events  *|
+\*************/
   created: function() {
     // instance ready callback
   },

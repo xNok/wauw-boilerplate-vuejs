@@ -2,16 +2,16 @@
 * @Author: Alexandre-COUEDELO
 * @Date:   2016-07-18 23:50:40
 * @Last Modified by:   Alexandre-COUEDELO
-* @Last Modified time: 2016-07-21 10:08:35
+* @Last Modified time: 2016-07-26 17:01:54
 */
 
 'use strict';
 
 var vm = new Vue({
   el: '#l-app', //binding to the DOM
-    /*************/
-   /* Variables */
-  /*************/
+/*************\
+|* Variables *|
+\*************/
   data: {
     // variables definition
     // #[reminder]
@@ -23,9 +23,9 @@ var vm = new Vue({
     // #[reminder]
     // same usage as data, but variables are javascript function 
   },
-    /*************/
-   /* Variables */
-  /*************/
+/*************\
+|* Functions *|
+\*************/
   methods: {
     // methods library
     // #[reminder]
@@ -34,9 +34,9 @@ var vm = new Vue({
   mixins: [
     //external function bundle. They are merge with the vue instance
   ],
-    /*************/
-   /* Events    */
-  /*************/
+/*************\
+|*   Events  *|
+\*************/
   watch: {
     // attach callback to expressions of the Vue instance
     // such as data and computed
