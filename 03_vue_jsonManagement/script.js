@@ -2,7 +2,7 @@
 * @Author: Alexandre-COUEDELO
 * @Date:   2016-07-18 23:50:40
 * @Last Modified by:   Alexandre-COUEDELO
-* @Last Modified time: 2016-07-21 16:53:48
+* @Last Modified time: 2016-07-26 18:04:54
 */
 
 'use strict';
@@ -15,6 +15,10 @@ var data = {
   name: 'My Tree',
 }
 
+function clone(obj){
+  return JSON.parse(JSON.stringify(obj));
+}
+
   /****************************************************************************
   * Vue.js Components definition                                              *
   ****************************************************************************/
@@ -22,7 +26,6 @@ var data = {
 Vue.filter('JSONStringify', function (value) {
   return JSON.stringify(value,null,2);
 })
-
   /****************************************************************************
   * Vue.js Components definition                                              *
   ****************************************************************************/
